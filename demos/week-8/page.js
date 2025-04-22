@@ -44,13 +44,15 @@ export default function Page() {
     return (
         <div>
             <h1>Random Dog </h1>
-            <select onChange= {handleSelectChange}>
+            <select onChange={handleSelectChange}>
+                <option value="">Select a breed</option>
                 {breeds.map((breed) => (
-                    <option key={breed}
-                    {breed} 
+                    <option key={breed} value={breed}>
+                        {breed}
+                    </option>
                 ))}
             </select>
-            <img src={randomDogUrl} alt ="A random dog" />
+            {randomDogUrl && <img src={randomDogUrl} alt="A random dog" />}
         </div>
     );
 }
